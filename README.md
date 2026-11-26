@@ -2,6 +2,9 @@
 
 > Bash + AWK tool that summarises one or several **SAM** alignment files using an **NCBI assembly report**: total reads, aligned reads and reads per chromosome.
 
+Assignment for **Programming in Bioinformatics** — Master's in Bioinformatics, Universitat Autònoma de Barcelona (UAB).
+
+**Authors:** Annalisa Monetta · Hafssa El Hany Milada
 ---
 
 ## 📑 Table of contents
@@ -19,7 +22,7 @@
 
 ---
 
-## 📖 Background
+##  Background
 
 The **Sequence Alignment/Map (SAM)** format is a text-based format that stores the results of aligning nucleotide sequences (DNA/RNA) against reference sequences. It supports short and long reads and can contain both mapped and unmapped reads.
 
@@ -27,7 +30,7 @@ An **assembly report** is a tab-delimited file that maps accession numbers (e.g.
 
 This script combines both: it reads the SAM files, counts the alignments per reference and translates each accession into its chromosome using the assembly report.
 
-## ✨ Features
+##  Features
 
 - Accepts **one or multiple** `.sam` files plus one assembly report (`.txt`) in any order.
 - Classifies the arguments by file extension; unsupported arguments are ignored with a warning.
@@ -45,7 +48,7 @@ This script combines both: it reads the SAM files, counts the alignments per ref
 
 No further dependencies. (`samtools` is only used for the optional validation described [below](#-alternative-approach-samtools).)
 
-## 🚀 Usage
+##  Usage
 
 ```bash
 chmod +x Report.sh
@@ -76,7 +79,7 @@ The results are written to **`output1.txt`** (the file is overwritten on every r
 ![Input validation messages](images/fig4_validation.png)
 *Figure 4 — Errors and warnings displayed by the script.*
 
-## 🗺️ Workflow
+##  Workflow
 
 ![Bash script workflow](images/fig1_workflow.png)
 *Figure 1 — Bash script workflow.*
@@ -184,9 +187,3 @@ For this small dataset, parsing the SAM directly with AWK was faster than going 
 ```
 
 > The SAM files and the assembly report used in the assignment are not included in the repository because of their size.
-
-## Project context
-
-Assignment for **Programming in Bioinformatics** — Master's in Bioinformatics, Universitat Autònoma de Barcelona (UAB).
-
-**Authors:** Annalisa Monetta · Hafssa El Hany Milada
