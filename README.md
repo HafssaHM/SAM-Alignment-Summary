@@ -76,12 +76,12 @@ The results are written to **`output1.txt`** (the file is overwritten on every r
 | No `.sam` file | `ERROR: No SAM files provided (.sam)` and exits |
 | Argument with another extension | `Warning: ignored argument <arg>` and continues |
 
-![Input validation messages](images/fig4_validation.png)
+![Input validation messages](fig4_validation.png)
 *Figure 4 — Errors and warnings displayed by the script.*
 
 ##  Workflow
 
-![Bash script workflow](images/fig1_workflow.png)
+![Bash script workflow](fig1_workflow.png)
 *Figure 1 — Bash script workflow.*
 
 1. Read the arguments and classify them by extension (`.sam` → input files, `.txt` → assembly report).
@@ -106,20 +106,20 @@ The distinction between header and alignment lines is based on the `@` character
 
 ### Input files used for testing
 
-![Input files](images/fig3_input_files.png)
+![Input files](fig3_input_files.png)
 *Figure 3 — File sizes and content of the SAM file and the assembly report.*
 
 ### Execution
 
-![Execution with one SAM file](images/fig2_execution.png)
+![Execution with one SAM file](fig2_execution.png)
 *Figure 2 — Execution of the script with a SAM file and an assembly report.*
 
-![Execution with two SAM files](images/fig5_two_sam.png)
+![Execution with two SAM files](fig5_two_sam.png)
 *Figure 5 — Execution with two SAM files and an assembly report.*
 
 ### Output file
 
-![Output file](images/fig6_output.png)
+![Output file](fig6_output.png)
 *Figure 6 — Output file result.*
 
 Example output (`file.sam`):
@@ -148,7 +148,7 @@ Execution time (seconds): 2
 
 As an independent check of the alignment and read distribution, the same analysis was run with `samtools` (`idxstats`).
 
-![samtools output](images/fig7_samtools.png)
+![samtools output](fig7_samtools.png)
 *Figure 7 — Alternative output obtained with samtools.*
 
 | | AWK script | samtools |
