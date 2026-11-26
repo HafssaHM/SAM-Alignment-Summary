@@ -9,20 +9,19 @@ Assignment for **Programming in Bioinformatics** — Master's in Bioinformatics,
 
 ## 📑 Table of contents
 
-- [Background](#-background)
-- [Features](#-features)
-- [Requirements](#-requirements)
-- [Usage](#-usage)
-- [Workflow](#-workflow)
-- [How it works](#-how-it-works)
-- [Results](#-results)
-- [Alternative approach: samtools](#-alternative-approach-samtools)
+- [Background](#background)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Workflow](#workflow)
+- [How it works](#how-it-works)
+- [Results](#results)
+- [Alternative approach: samtools](#alternative-approach-samtools)
 - [Repository structure](#-repository-structure)
-- [Report](#-report)
 
 ---
 
-##  Background
+## Background
 
 The **Sequence Alignment/Map (SAM)** format is a text-based format that stores the results of aligning nucleotide sequences (DNA/RNA) against reference sequences. It supports short and long reads and can contain both mapped and unmapped reads.
 
@@ -30,7 +29,7 @@ An **assembly report** is a tab-delimited file that maps accession numbers (e.g.
 
 This script combines both: it reads the SAM files, counts the alignments per reference and translates each accession into its chromosome using the assembly report.
 
-##  Features
+## Features
 
 - Accepts **one or multiple** `.sam` files plus one assembly report (`.txt`) in any order.
 - Classifies the arguments by file extension; unsupported arguments are ignored with a warning.
@@ -41,14 +40,14 @@ This script combines both: it reads the SAM files, counts the alignments per ref
   - number of reads per reference accession, with its chromosome (or `NA` if it is not in the assembly report).
 - Writes everything to a single output file and logs the **execution time**.
 
-## 🔧 Requirements
+## Requirements
 
 - Linux / macOS with `bash`
 - `awk` (standard on any Unix system)
 
 No further dependencies. (`samtools` is only used for the optional validation described [below](#-alternative-approach-samtools).)
 
-##  Usage
+## Usage
 
 ```bash
 chmod +x Report.sh
@@ -90,7 +89,7 @@ The results are written to **`output1.txt`** (the file is overwritten on every r
 4. For each SAM file, run the AWK process: parse the assembly report, count reads and map chromosomes.
 5. Append a summary (number of processed files and execution time) to the output.
 
-## ⚙️ How it works
+##  How it works
 
 The core of the script is the `process_alignment()` function, called once per SAM file inside a loop so that each file is processed independently. It pipes the SAM file through an AWK program with three blocks:
 
@@ -102,7 +101,7 @@ The core of the script is the `process_alignment()` function, called once per SA
 
 The distinction between header and alignment lines is based on the `@` character: header lines start with it, alignment lines do not.
 
-## 📊 Results
+## Results
 
 ### Input files used for testing
 
@@ -144,7 +143,7 @@ Execution time (seconds): 2
 
 > ℹ️ The accession order in the table is not sorted, since AWK iterates over associative arrays in an arbitrary order. Pipe the table through `sort` if you need a fixed order.
 
-## 🔬 Alternative approach: samtools
+## Alternative approach: samtools
 
 As an independent check of the alignment and read distribution, the same analysis was run with `samtools` (`idxstats`).
 
