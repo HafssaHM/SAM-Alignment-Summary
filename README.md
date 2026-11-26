@@ -2,10 +2,6 @@
 
 > Bash + AWK tool that summarises one or several **SAM** alignment files using an **NCBI assembly report**: total reads, aligned reads and reads per chromosome.
 
-Assignment for **Programming in Bioinformatics** — Master's in Bioinformatics, Universitat Autònoma de Barcelona (UAB).
-
-**Authors:** Annalisa Monetta · Hafssa El Hany Milada
-
 ---
 
 ## 📑 Table of contents
@@ -189,12 +185,8 @@ For this small dataset, parsing the SAM directly with AWK was faster than going 
 
 > The SAM files and the assembly report used in the assignment are not included in the repository because of their size.
 
-## 📄 Report
+## Project context
 
-The full write-up of the assignment (introduction, workflow, results and discussion) is available in [`docs/Report_Assignment_1.pdf`](docs/Report_Assignment_1.pdf).
+Assignment for **Programming in Bioinformatics** — Master's in Bioinformatics, Universitat Autònoma de Barcelona (UAB).
 
-> Note: the screenshots in the report were taken with an earlier version of the script that also printed `[INFO]` messages and wrote to `output.txt`. The current version writes to `output1.txt`.
-
----
-
-*Universitat Autònoma de Barcelona — Programming in Bioinformatics*
+**Authors:** Annalisa Monetta · Hafssa El Hany Milada
